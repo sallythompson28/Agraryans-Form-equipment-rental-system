@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- <title>Admin Panel Log in</title> -->
+  <!-- Tell the browser to be responsive to screen width -->
+       <!-- <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> -->
+       <meta content="width=device-width, initial-scale=1.0" name="viewport">
+       <title>Agraryans-admin</title>
+       <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport"> -->
+       <meta content="Law Firm Website Template" name="keywords">
+       <meta content="Law Firm Website Template" name="description">
+
+       <!-- Favicon -->
+       <link href="{% static 'landing-assets/img/favicon.icon' %}" rel="icon">
+
+       <!-- Google Font -->
+       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
+       
+       <!-- CSS Libraries -->
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+       <link href="{% static 'landing-assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+       <link href="{% static 'landing-assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+       <!-- Template Stylesheet -->
+       <link href="{% static 'landing-assets/css/style.css' %}" rel="stylesheet">
+  <!-- Bootstrap 3.3.6 -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
+    </head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+   <link href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto">
+   
+    <style>
+    /* <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"> */
+    body {
+    /* background: #222D32; */
+    background-image: url("{% static 'landing-assets/img/back7.jpg' %}") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #aa9166;
+    transition: none;
+}
+
+.login-box {
+    margin-top: 75px;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ECF0F5;
+}
+
+.login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+input[type=text] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
+
+input[type=password] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #6C6C6C;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+    border-color: #0DB8DE;
+    color: #0DB8DE;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+    background-color: #0DB8DE;
+    right: 0px;
+}
+
+.login-btm {
+    float: left;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
+}
+
+.loginbttm {
+    padding: 0px;
+}
+
+    </style>
+ <body>
+   
+    
+        <body>
+            <div class="wrapper">
+                <!-- Top Bar Start -->
+                <div class="top-bar">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="logo">
+                                    <a href="{% url 'index' %}">
+                                        <h1 style="color:white">Agraryans</h1>
+                                        <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="top-bar-right">
+                                    <!-- <div class="text">
+                                        <h2>8:00 - 9:00</h2>
+                                        <p>Opening Hour Mon - Fri</p>
+                                    </div>
+                                    <div class="text">
+                                        <h2>+123 456 7890</h2>
+                                        <p>Call Us For Free Consultation</p>
+                                    </div> -->
+                                    <div class="social">
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-bar">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                            <a href="#" class="navbar-brand">MENU</a>
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+    
+                            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                                <div class="navbar-nav mr-auto">
+                                    <a href="{% url 'index' %}" class="nav-item nav-link ">Home</a>
+                                    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                                    <a href="{% url 'blog' %}" class="nav-item nav-link">Blog</a>
+                                   <!-- <a href="team.html" class=" nav-item nav-link">Product</a> -->
+                                    <a href="{% url 'portfolio' %}" class="nav-item nav-link">product</a>
+                                        <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+                                    <!-- <div class="nav-item dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                        <div class="dropdown-menu">
+                                            <a href="blog.html" class="dropdown-item">Blog Page</a>
+                                            <a href="single.html" class="dropdown-item">Single Page</a>
+                                        </div>
+                                    </div> -->
+                                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="col-lg-9">
+                                 <!-- <div class="social-bar">
+                                    
+                                    <div class="social">
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                    </div>  -->
+                                  
+                                        <!-- <input type="text" class="form-control" placeholder="search" name= "search" required="required"  >
+                                        -->
+                                       
+                                            <!-- <form action="#">
+                                                <input type="text"
+                                                    placeholder=" Search "  name="search">
+                                                <button>
+     <i class="fa fa-search"
+                                                        style="font-size: 18px;">
+                                                    </i>
+                                                </button>
+                                            </form>
+                                        </div> -->
+                                        
+                                        
+                                        
+                                            <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+                                        
+                                    <!-- <a class="btn" href="https://htmlcodex.com/law-firm-website-template">Logout</a> -->
+                                 
+                            </div>
+                                 </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Nav Bar End -->
+                
+                
+                <!-- Top Bar End -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                    ADMIN 
+                </div>
+                <form action="/admin_login" method='POST'>
+                    {% csrf_token %}
+                    {% for i in messages %}
+                    {% if "reg" in i.tags %}
+                    <div class="alert alert-success" role="alert">
+                      {{i}}
+                     </div>
+                    {% endif %}
+                    {% endfor %}
+
+                    
+                   {% for j in messages %}
+                    {% if "login" in j.tags %}
+                    <div class="alert alert-danger" role="alert">
+                      {{j}}
+                     </div>
+                     {% endif %} 
+                    {% endfor %}
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form action="admin_home.html">
+                            <div class="form-group">
+                                <label class="form-control-label">USERNAME</label>
+                                <input type="text" class="form-control" name="user_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input type="password" class="form-control" name="password" required>
+                            </div>
+
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <a href="{% url 'admin_home' %}">
+                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button></a>
+                                </div>
+                                <div class="foot-lnk" style="color:white">
+                                    <p>Dont have an account?<p>
+                                    <a href="{% url 'admin_signup' %}">Sign up</a>
+                                          <!-- <button type="submit">sign up</i></button> -->
+                                          <!-- <a class="btn" label for="tab-2">Sign up</a> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </body>
+     <!-- JavaScript Libraries -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+     <script src="{% static 'landing-assets/lib/easing/easing.min.js' %}"></script>
+     <script src="{% static 'landing-assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'landing-assets/lib/isotope/isotope.pkgd.min.js' %}"></script>
+
+     <!-- Template Javascript -->
+     <script src="{% static 'landing-assets/js/main.js' %}"></script>
+ </body>
+</html>

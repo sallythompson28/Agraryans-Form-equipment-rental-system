@@ -1,0 +1,1395 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.radixtouch.in/templates/admin/Worksbot/source/light/pages/ecommerce/product-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 12:24:19 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>AGRARYANS-Form Equipment Rental System</title>
+    <!-- Favicon-->
+    <link rel="icon" href="{% static 'assets/images/favicon.icon' %}" type="image/x-icon">
+    <!-- Plugins Core Css -->
+    <link href="{% static 'assets/css/app.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/form.min.css' %}" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="{% static 'assets/css/styles/all-themes.css' %}" rel="stylesheet" />
+    <style>
+        .mybtn-right{
+            text-align: right;
+        }
+        .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content  a:hover {background-color: #ddd;}
+
+.dropdown:hover  .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+        
+</head>
+
+<body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img class="loading-img-spin" src="{% static 'assets/images/loading.png' %}" alt="admin">
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false"></a>
+                <a href="#" onClick="return false;" class="bars"></a>
+                <a class="navbar-brand" href="{% url 'admin_home' %}">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="" />
+                    <span class="logo-name">AGRARYANS</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="#" onClick="return false;" class="sidemenu-collapse">
+                            <i class="nav-hdr-btn ti-align-left"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Full Screen Button -->
+                    <li class="fullscreen">
+                        <a href="javascript:;" class="fullscreen-btn">
+                            <i class="nav-hdr-btn ti-fullscreen"></i>
+                        </a>
+                    </li>
+                    <!-- #END# Full Screen Button -->
+                    <!-- #START# Notifications-->
+                    <li class="dropdown">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="nav-hdr-btn ti-bell"></i>
+                            <span class="notify"></span>
+                            <span class="heartbeat"></span>
+                        </a>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user1.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Sarah Smith</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user2.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Airi Satou</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user3.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">John Doe</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user4.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Ashton Cox</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user5.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Cara Stevens</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user6.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Charde Marshall</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user7.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">John Doe</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#" onClick="return false;">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications-->
+                    <li class="dropdown user_profile">
+                         <div class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="{% static 'assets/images/user.jpg' %}" alt="user">
+                        </div>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="body">
+                                <ul class="user_dw_menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">person</i>Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">feedback</i>Feedback
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">help</i>Help
+                                        </a>
+                                    </li>
+                                    <li class="logout">
+                                        <a href="/logout_page">
+                                          <i class="material-icons">power_settings_new</i>Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right">
+                        <a href="#" onClick="return false;" class="js-right-sidebar" data-close="true">
+                            <i class="nav-hdr-btn ti-layout-grid2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <div>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                	<li>
+	                <div class="sidebar-profile clearfix">
+	                  <div class="profile-img">
+	                     <img src="{% static 'assets/images/usrbig.jpg' %}" alt="profile">
+	                  </div>
+	                  <div class="profile-info">
+                        <h3>{{agraryans_data.user_name}}</h3>
+	                     <p>Welcome Admin !</p>
+	                  </div>
+	               </div>
+	                </li>
+                    <li class="header">-- Main</li>
+                    <li>
+                        <a href="{% url 'admin_home' %}" >
+                            <i class="menu-icon ti-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <!-- <ul class="ml-menu">
+                            <li class="active">
+                                
+                                <a href="index.html">Dashboard </a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="dashboard2.html">Dashboard 2</a>
+                            </li>
+                            <li>
+                                <a href="dashboard3.html">Dashboard 3</a>
+                            </li> -->
+                        <!-- </ul> -->
+                    </li>
+                    <li>
+                        <a href="{% url 'admin_index' %}" >
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Admin-Dashboard</span>
+                        </a>
+                        <!-- <ul class="ml-menu">
+                            <li class="active">
+                                
+                                <a href="index.html">Dashboard </a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="dashboard2.html">Dashboard 2</a>
+                            </li>
+                            <li>
+                                <a href="dashboard3.html">Dashboard 3</a>
+                            </li> -->
+                        <!-- </ul> -->
+                    </li>
+                    <li class="active">
+                        <a href="{% url 'admin_reservation' %}" >
+                            <i class="far fa-file"></i>
+                            <span>Reservations</span>
+                        </a>
+                        <!-- <ul class="ml-menu">
+                            <li>
+                                <a href="products.html">Products</a>
+                            </li>
+                            <li>
+                                <a href="product-detail.html">Product Details</a>
+                            </li>
+                            <li>
+                                <a href="cart.html">Cart</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html">Product List</a>
+                            </li>
+                            <li>
+                                <a href="invoice.html">Invoice</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li>
+                        <a href="{% url 'admin_equipment' %}">
+                            <i class="menu-icon ti-magnet"></i>
+                            <span>Equipments</span>
+                        </a>
+                        <!-- <ul class="ml-menu">
+                            <li>
+                                <a href="chart-widget.html">Chart Widget</a>
+                            </li>
+                            <li>
+                                <a href="data-widget.html">Data Widget</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="{% url 'admin_packages' %}">
+                            <i class="fas fa-cube"></i>
+                            <span>Packages</span>
+                        </a>
+                        <!-- <ul class="ml-menu">
+                            <li>
+                                <a href="alerts.html">Alerts</a>
+                            </li>
+                            <li>
+                                <a href="animations.html">Animations</a>
+                            </li>
+                            <li>
+                                <a href="badges.html">Badges</a>
+                            </li>
+                            <li>
+                                <a href="modal.html">Modal</a>
+                            </li>
+                            <li>
+                                <a href="buttons.html">Buttons</a>
+                            </li>
+                            <li>
+                                <a href="collapse.html">Collapse</a>
+                            </li>
+                            <li>
+                                <a href="dialogs.html">Dialogs</a>
+                            </li>
+                            <li>
+                                <a href="cards.html">Cards</a>
+                            </li>
+                            <li>
+                                <a href="labels.html">Labels</a>
+                            </li>
+                            <li>
+                                <a href="list-group.html">List Group</a>
+                            </li>
+                            <li>
+                                <a href="media-object.html">Media Object</a>
+                            </li>
+                            <li>
+                                <a href="notifications.html">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="preloaders.html">Preloaders</a>
+                            </li>
+                            <li>
+                                <a href="progressbars.html">Progress Bars</a>
+                            </li>
+                            <li>
+                                <a href="range-sliders.html">Range Sliders</a>
+                            </li>
+                            <li>
+                                <a href="sortable-nestable.html">Sortable &amp; Nestable</a>
+                            </li>
+                            <li>
+                                <a href="tabs.html">Tabs</a>
+                            </li>
+                            <li>
+                                <a href="waves.html">Waves</a>
+                            </li>
+                            <li>
+                                <a href="typography.html">Typography</a>
+                            </li>
+                            <li>
+                                <a href="helper-classes.html">Helper Classes</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="{% url 'admin_categories' %}">
+                            <i class="far fa-list-alt"></i>
+                            <span>Categories</span>
+                        </a>
+                       
+                    </li>
+                    <!-- <li>
+                        <a href="admin-options.html">
+                            <i class="menu-icon ti-menu-alt"></i>
+                            <span>Options</span>
+                        </a>
+                        </li> -->
+                    <li>
+                        <a href="{% url 'admin_userlist' %}">
+                            <i class="fas fa-users"></i></i>
+                            <span>Users</span>
+                        </a>
+                       
+                    </li>
+                    
+<!--                    
+                    <li>
+                        <a href="admin-preview.html">
+                            <i class="fas fa-laptop"></i>
+                            <span>Preview</span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="admin-install.html">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>Install</span>
+                        </a>
+                    </li> -->
+                   
+                    <li class="logout">
+                        <a href="/logout_page">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                        <!-- <ul class="ml-menu">
+                            <li>
+                                <a href="dragdrop.html">Drag &amp; Drop</a>
+                            </li>
+                            <li>
+                                <a href="contact_list.html">Contact List</a>
+                            </li>
+                            <li>
+                                <a href="contact_grid.html">Contact Grid</a>
+                            </li>
+                            <li>
+                                <a href="support.html">Support</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-stats-up"></i>
+                            <span>Charts</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="amchart.html">amChart</a>
+                            </li>
+                            <li>
+                                <a href="echart.html">Echart</a>
+                            </li>
+                            <li>
+                                <a href="apexcharts.html">ApexCharts</a>
+                            </li>
+                            <li>
+                                <a href="morris.html">Morris</a>
+                            </li>
+                            <li>
+                                <a href="chartjs.html">ChartJS</a>
+                            </li>
+                            <li>
+                                <a href="sparkline.html">Sparkline</a>
+                            </li>
+                            <li>
+                                <a href="jquery-knob.html">Jquery Knob</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-map-alt"></i>
+                            <span>Maps</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="google.html">Google Map</a>
+                            </li>
+                            <li>
+                                <a href="jqvmap.html">Vector Map</a>
+                            </li>
+                            <li>
+                                <a href="datamap.html">Data Map</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header">-- Extra</li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-split-v"></i>
+                            <span>Timeline</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="timeline.html">Timeline 1</a>
+                            </li>
+                            <li>
+                                <a href="timeline2.html">Timeline 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-image"></i>
+                            <span>Medias</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="image-gallery.html">Image Gallery</a>
+                            </li>
+                            <li>
+                                <a href="carousel.html">Carousel</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-user"></i>
+                            <span>Authentication</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="login-register.html">Login &amp; Register</a>
+                            </li>
+                            <li>
+                                <a href="sign-in.html">Sign In</a>
+                            </li>
+                            <li>
+                                <a href="sign-up.html">Sign Up</a>
+                            </li>
+                            <li>
+                                <a href="forgot-password.html">Forgot Password</a>
+                            </li>
+                            <li>
+                                <a href="locked.html">Locked</a>
+                            </li>
+                            <li>
+                                <a href="404.html">404 - Not Found</a>
+                            </li>
+                            <li>
+                                <a href="500.html">500 - Server Error</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-receipt"></i>
+                            <span>Extra Pages</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="profile.html">Profile</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="faqs.html">Faqs</a>
+                            </li>
+                            <li>
+                                <a href="blank.html">Blank Page</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-angle-double-down"></i>
+                            <span>Multi Level Menu</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#" onClick="return false;">
+                                    <span>Menu Item</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;">
+                                    <span>Menu Item - 2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>Level - 2</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span>Menu Item</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;" class="menu-toggle">
+                                            <span>Level - 3</span>
+                                        </a>
+                                        <ul class="ml-menu">
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>Level - 4</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li>
+                        <hr>
+                        <div class="leftSideProgress">
+                            <div class="progress-list">
+                                <div class="details">
+                                    <div class="title">Disk Usage</div>
+                                </div>
+                                <div class="status">
+                                    <span>52</span>%
+                                </div>
+                                <div class="progress-s progress">
+                                    <div class="progress-bar progress-bar-success width-per-52" role="progressbar"
+                                        aria-valuenow="38" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leftSideProgress">
+                            <div class="progress-list m-b-10">
+                                <div class="details">
+                                    <div class="title">Server Load</div>
+                                </div>
+                                <div class="status">
+                                    <span>79</span>%
+                                </div>
+                                <div class="progress-s progress">
+                                    <div class="progress-bar progress-bar-warning width-per-79" role="progressbar"
+                                        aria-valuenow="38" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation">
+                    <a href="#skins" data-toggle="tab" class="active">SKINS</a>
+                </li>
+                <li role="presentation">
+                    <a href="#settings" data-toggle="tab">SETTINGS</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
+                    <div class="demo-skin">
+                        <div class="rightSetting">
+                            <p>GENERAL SETTINGS</p>
+                            <ul class="setting-list list-unstyled m-t-20">
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Save
+                                                History
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Show
+                                                Status
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Auto
+                                                Submit Issue
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Show
+                                                Status To All
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightSetting">
+                            <p>SIDEBAR MENU COLORS</p>
+                            <button type="button" class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>THEME COLORS</p>
+                            <button type="button" class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>SKINS</p>
+                            <ul class="demo-choose-skin choose-theme list-unstyled">
+                                <li data-theme="black" class="actived">
+                                    <div class="black-theme"></div>
+                                </li>
+                                <li data-theme="white">
+                                    <div class="white-theme white-theme-border"></div>
+                                </li>
+                                <li data-theme="purple">
+                                    <div class="purple-theme"></div>
+                                </li>
+                                <li data-theme="blue">
+                                    <div class="blue-theme"></div>
+                                </li>
+                                <li data-theme="cyan">
+                                    <div class="cyan-theme"></div>
+                                </li>
+                                <li data-theme="green">
+                                    <div class="green-theme"></div>
+                                </li>
+                                <li data-theme="orange">
+                                    <div class="orange-theme"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightSetting">
+                            <p>Disk Space</p>
+                            <div class="sidebar-progress">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-bg-cyan shadow-style width-per-45" role="progressbar"
+                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="progress-description">
+                                    <small>26% remaining</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rightSetting m-b-15">
+                            <p>Server Load</p>
+                            <div class="sidebar-progress">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-bg-orange shadow-style width-per-63" role="progressbar"
+                                        aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="progress-description">
+                                    <small>Highly Loaded</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane stretchRight" id="settings">
+                    <div class="demo-settings">
+                        <p>GENERAL SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Report Panel Usage</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-green"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Email Redirect</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="lever switch-col-blue"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>SYSTEM SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Notifications</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-purple"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Auto Updates</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-cyan"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>ACCOUNT SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Offline</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-red"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Location Permission</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="lever switch-col-lime"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation">
+                    <a href="#skins" data-toggle="tab" class="active">SKINS</a>
+                </li>
+                <li role="presentation">
+                    <a href="#settings" data-toggle="tab">SETTINGS</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
+                    <div class="demo-skin">
+                        <div class="rightSetting">
+                            <p>GENERAL SETTINGS</p>
+                            <ul class="setting-list list-unstyled m-t-20">
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Save
+                                                History
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Show
+                                                Status
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Auto
+                                                Submit Issue
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Show
+                                                Status To All
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightSetting">
+                            <p>SIDEBAR MENU COLORS</p>
+                            <button type="button" class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>THEME COLORS</p>
+                            <button type="button" class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>SKINS</p>
+                            <ul class="demo-choose-skin choose-theme list-unstyled">
+                                <li data-theme="black" class="actived">
+                                    <div class="black-theme"></div>
+                                </li>
+                                <li data-theme="white">
+                                    <div class="white-theme white-theme-border"></div>
+                                </li>
+                                <li data-theme="purple">
+                                    <div class="purple-theme"></div>
+                                </li>
+                                <li data-theme="blue">
+                                    <div class="blue-theme"></div>
+                                </li>
+                                <li data-theme="cyan">
+                                    <div class="cyan-theme"></div>
+                                </li>
+                                <li data-theme="green">
+                                    <div class="green-theme"></div>
+                                </li>
+                                <li data-theme="orange">
+                                    <div class="orange-theme"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightSetting">
+                            <p>Disk Space</p>
+                            <div class="sidebar-progress">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-bg-cyan shadow-style width-per-45" role="progressbar"
+                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="progress-description">
+                                    <small>26% remaining</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rightSetting m-b-15">
+                            <p>Server Load</p>
+                            <div class="sidebar-progress">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-bg-orange shadow-style width-per-63" role="progressbar"
+                                        aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="progress-description">
+                                    <small>Highly Loaded</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane stretchRight" id="settings">
+                    <div class="demo-settings">
+                        <p>GENERAL SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Report Panel Usage</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-green"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Email Redirect</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="lever switch-col-blue"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>SYSTEM SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Notifications</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-purple"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Auto Updates</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-cyan"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>ACCOUNT SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Offline</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-red"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Location Permission</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="lever switch-col-lime"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Add Reservation</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="{% url 'admin_home' %}">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <!-- <li class="breadcrumb-item bcrumb-2">
+                                <a href="#" onClick="return false;">Apps</a>
+                            </li> -->
+                            <li class="breadcrumb-item active">Add Reservation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome">
+                <h1>Welcome {{agraryans_data.user_name}}!!</h1>
+            </div>
+                <!-- <div class="col-lg-6 col-md-12 col-sm-12 col-12"> -->
+                    <div class="card">
+                        <div class="header">
+                            <!-- <h2>
+                                <strong></strong> Rounded Buttons</h2> -->
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <!-- <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="#" onClick="return false;">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onClick="return false;">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onClick="return false;">Something else here</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul> -->
+                        </div>
+                       
+                       
+   
+                        <div class="body">
+                            <h2 style="text-align: center;">Create a Reservation Button Modal</h2>
+                            <!-- <div class="button-demo">
+                                <a href="addequipment.html">
+                                <button class="btn-hover btn-border-radius color-6" >Details</button></a>
+                                <a href="photos.html">
+                                <button class="btn-hover btn-border-radius color-9">Photos</button></a> -->
+                                <!-- <button class="btn-hover btn-border-radius color-3">BUTTON</button>
+                                <button class="btn-hover btn-border-radius color-4">BUTTON</button> -->
+                            </div>
+                            
+                            
+                            
+                             <div class="alert alert-info">
+                                <h2><strong>Add New Reservation</strong> </h2>
+                                 <p>Enter the details to add new reservation .On the next step you can add price and additional Information about it.</p>
+                             </div>
+           
+                           
+                           <!-- <form>
+                               <label>Name</label>
+                               <input type="text" name="name" id="myname">
+                           </form>  -->
+                           <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <!-- <ul class="breadcrumb breadcrumb-style ">
+                                    <li class="breadcrumb-item">
+                                        <h4 class="page-title">Form Validations</h4>
+                                    </li>
+                                    <li class="breadcrumb-item bcrumb-1">
+                                        <a href="../../index.html">
+                                            <i class="fas fa-home"></i> Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item bcrumb-2">
+                                        <a href="#" onClick="return false;">Forms</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Validations</li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    
+                    <!-- Basic Validation -->
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <!-- <h2>
+                                        <strong>Basic</strong> Validation</h2> -->
+                                    <!-- <ul class="header-dropdown m-r--5">
+                                        <li class="dropdown">
+                                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
+                                                role="button" aria-haspopup="true" aria-expanded="false">
+                                                <i class="material-icons">more_vert</i>
+                                            </a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="#" onClick="return false;">Action</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onClick="return false;">Another action</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onClick="return false;">Something else here</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                                <!-- < add package form> -->
+                                <div class="body">
+                                    <h4 style="color:blue">Booking Details</h4>
+                                    <form id="form_validation" method="POST" action="/admin_newreservation_form_submission">
+                                        {% csrf_token %}
+                                        {% for i in messages %}
+                                        <div class="alert alert-success" role="alert">
+                                            {{i}}
+                                            </div>
+                                        {% endfor %}
+                                        <div class="form-group form-float pt-3">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" name="unique_id" required>
+                                                <label class="form-label">Unique Id</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mr-3">
+                                            <b>Date-Time From</b>
+                                             <div class="input-group">
+                                              <span class="input-group-addon">
+                                                  <i class="material-icons">vpn_key</i>
+                                              </span>
+                                                     <div class="form-line">
+                                                        <input type="text" class="form-control key" placeholder="Ex:30/7/2021" name="dt_from"> 
+                                                     </div>
+                                                 </div>
+                                              </div>
+                                              <div class="col-md-3 mr-3">
+                                                <b>Date-Time to</b>
+                                                 <div class="input-group">
+                                                  <span class="input-group-addon">
+                                                      <i class="material-icons">vpn_key</i>
+                                                  </span>
+                                                         <div class="form-line">
+                                                            <input type="text" class="form-control key" placeholder="Ex:30/7/2021" name="dt_to"> 
+                                                         </div>
+                                                     </div>
+                                                  </div>
+                                                
+                                                  <div class="col-md-3">
+                                                    <label>Items</label>
+                                                    <select class="browser-default" name="items">
+                                                        <option value="" disabled selected>--Choose --</option>
+                                                        <option value="Outdoor Equipment">10-inch Drill press</option>
+                                                        <option value="Sports Equipment">Bicycle Helmet</option>
+                                                        <option value="Construction tools">Rotary</option>
+                                                    </select>
+                                                </div>
+                                        
+                               
+                    <div class="col-md-3">
+                        <label>Payment Method</label>
+                        <select class="browser-default" name="payment">
+                            <option value="" disabled selected>--Choose --</option>
+                            <option value="Cash on deliver">Cash on deliver</option>
+                            <option value="Credit">Credit</option>
+                            <option value="Debit">Debit</option>
+                        </select>
+                    </div>
+                
+                <div class="col-md-3">
+                    <b>Price</b>
+                    <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">vpn_key</i>
+                            </span>
+                            <div class="form-line">
+                                <input type="text" class="form-control key" placeholder="Ex:$200" name="price"> 
+                            </div>
+                            </div>
+                            </div>
+                <div class="col-md-3 mr-3">
+                <b>Security</b>
+                 <div class="input-group">
+                  <span class="input-group-addon">
+                      <i class="material-icons">vpn_key</i>
+                  </span>
+                         <div class="form-line">
+                            <input type="text" class="form-control key" placeholder="Ex:12344" name="security"> 
+                         </div>
+                     </div>
+                  </div>
+                  <div class="col-md-3 mr-3">
+                    <b>Deposit</b>
+                     <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="material-icons">vpn_key</i>
+                      </span>
+                             <div class="form-line">
+                                <input type="text" class="form-control key" placeholder="Ex:$234" name="deposit"> 
+                             </div>
+                         </div>
+                      </div>
+                      <div class="col-md-3 mr-3">
+                        <b>Tax</b>
+                         <div class="input-group">
+                          <span class="input-group-addon">
+                              <i class="material-icons">vpn_key</i>
+                          </span>
+                                 <div class="form-line">
+                                    <input type="text" class="form-control key" placeholder="Ex:$23" name="tax"> 
+
+                                 </div>
+                             </div>
+                          </div> 
+                          <div class="col-md-3 mr-3">
+                            <b>Total</b>
+                             <div class="input-group">
+                              <span class="input-group-addon">
+                                  <i class="material-icons">vpn_key</i>
+                              </span>
+                                     <div class="form-line">
+                                        <input type="text" class="form-control key" placeholder="Ex:$34" name="total"> 
+                                     </div>
+                                 </div>
+                              </div> 
+                <div class="body">
+                    <div class="row clearfix">
+                    <div class="col-md-3">
+                        <label>How did you get the equipment?</label>
+                        <select class="browser-default" name="borrow">
+                            <option value="" disabled selected>--Choose --</option>
+                            <option value="pick-uo">Pick-Up</option>
+                            <option value="delivery">Delivery</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                    <div class="col-md-3">
+                        <label>How will you  return the equipment?</label>
+                        <select class="browser-default" name="back">
+                            <option value="" disabled selected>--Choose --</option>
+                            <option value="collection">Collection</option>
+                            <option value="return">Return</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                
+             
+                                       
+                                        <div class="form-group">
+                                            <div class="form-check m-l-10">
+                                                <label class="form-check-label">
+                                                    <!-- <input class="form-check-input" type="checkbox" id="checkbox" name="checkbox">
+                                                    I have read and accept the terms
+                                                    <span class="form-check-sign">
+                                                        <span class="check"></span> -->
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="button-demo">
+                                           
+                                        <button class="btn btn-primary waves-effect" type="submit">Save</button>
+                                        
+                                        <button class="btn btn-primary waves-effect" type="button">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+            
+           
+                                  </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'assets/js/app.min.js' %}"></script>
+    <script src="{% static 'assets/js/table.min.js' %}"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'assets/js/admin.js' %}"></script>
+    <script src="{% static 'assets/js/pages/tables/jquery-datatable.js' %}"></script>
+    <!-- Demo Js -->
+</body>
+
+
+<!-- Mirrored from www.radixtouch.in/templates/admin/Worksbot/source/light/pages/ecommerce/product-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 12:24:22 GMT -->
+</html>

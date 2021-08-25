@@ -1,0 +1,359 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>Agraryans-login</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Law Firm Website Template" name="keywords">
+        <meta content="Law Firm Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static 'landing-assets/img/favicon.icon' %}" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="{% static 'landing-assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'landing-assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'landing-assets/css/style.css' %}" rel="stylesheet">
+    </head>
+	
+<style>
+body{
+	margin:0;
+	color:#6a6f8c;
+	/* background:url("img/log.jpg") no-repeat; */
+    background-image:url("{% static 'landing-assets/img/log9.jpg' %}");
+    background-size: cover;
+    background-attachment: fixed;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:670px;
+	position:relative;
+	background:url("{% static 'landing-assets/img/log3.jpg' %}") no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(89, 90, 94, 0.9);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+	color:#fff;
+	border-color:#1161ee;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+
+.login-form .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#1161ee;
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}
+
+</style>
+
+
+    <body>
+        <div class="wrapper">
+            <!-- Top Bar Start -->
+            <div class="top-bar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="logo">
+                                <a href="{% url 'index' %}">
+                                    <h1 style="color:white">Agraryans</h1>
+                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="top-bar-right">
+                                <!-- <div class="text">
+                                    <h2>8:00 - 9:00</h2>
+                                    <p>Opening Hour Mon - Fri</p>
+                                </div>
+                                <div class="text">
+                                    <h2>+123 456 7890</h2>
+                                    <p>Call Us For Free Consultation</p>
+                                </div> -->
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+            <!-- Nav Bar Start -->
+            <div class="nav-bar">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                        <a href="#" class="navbar-brand">MENU</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <!-- <div class="navbar-nav mr-auto"> -->
+                                <!-- <a href="index.html" class="nav-item nav-link">Home</a>
+                                <a href="about.html" class="nav-item nav-link">About</a>
+                                <a href="service.html" class="nav-item nav-link">Practice</a>
+                                <a href="team.html" class="nav-item nav-link">Attorneys</a>
+                                <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                    <div class="dropdown-menu">
+                                        <a href="blog.html" class="dropdown-item">Blog Page</a>
+                                        <a href="single.html" class="dropdown-item">Single Page</a> -->
+                                        <div class="navbar-nav mr-auto">
+                                                <a href="{% url 'index' %}" class="nav-item nav-link ">Home</a>
+                                                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                                                <a href="{% url 'blog' %}" class="nav-item nav-link">Blog</a>
+                                           <!-- <a href="team.html" class=" nav-item nav-link">Product</a> -->
+                                                <a href="{% url 'portfolio' %}" class="nav-item nav-link">product</a>
+                                                <a href="{% url 'login' %}" class="nav-item nav-link active">Login</a>
+                                                <a href="{% url 'contact' %}" class="nav-item nav-link ">Contact</a>
+                                    </div>
+                                </div>
+                              
+							
+						</div>
+                    </nav>
+                </div>
+            </div>
+			<div class="login-wrap">
+				<div class="login-html">
+					<!-- <h4><b>admin login</b></h4> -->
+						
+					{% for i in messages %}
+					{% if "reg" in i.tags %}
+					<div class="alert alert-success" role="alert">
+						{{i}}
+					  </div>
+					  {% endif %}
+					{% endfor %}
+			
+			
+					{% for j in messages %}
+					{% if "login" in j.tags %}
+					<div class="alert alert-danger" role="alert">
+						{{j}}
+					  </div>
+					  {% endif %}
+					{% endfor %}
+			
+					<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+					<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+					<div class="login-form">
+						<!--login form start-->
+						<form action="/login" method="POST">
+							{% csrf_token %}
+						<div class="sign-in-htm">
+							<div class="group">
+								<label for="user" class="label">Username</label>
+								<input id="user" type="text" class="input" name="user_name" required>
+							</div>
+							<div class="group">
+								<label for="pass" class="label">Password</label>
+								<input id="pass" type="password" class="input" data-type="password" name="password" required>
+							</div>
+							<div class="group">
+								<input id="check" type="checkbox" class="check" checked>
+								<label for="check"><span class="icon"></span> Keep me Signed in</label>
+							</div>
+							<div class="group">
+								<button type="submit" class="button" >Sign In</button>
+							</div>
+							<div class="hr"></div>
+							<div class="foot-lnk">
+								<a href="#forgot">Forgot Password?</a>
+							</div>
+						</div>
+						</form>
+						<!--login form end-->
+						<!--registration form start-->
+				
+						<form action="/store_reg2_data" method="POST">
+							{% csrf_token %}
+						
+			
+						<div class="sign-up-htm">
+							<div class="group">
+								<label for="user" class="label">Username</label>
+								<input id="user" type="text" class="input" name="user_name" required>
+							</div>
+							<div class="group">
+								<label for="pass" class="label">Password</label>
+								<input id="pass" type="password" class="input" data-type="password" name="password" required>
+							</div>
+							<div class="group">
+								<label for="pass" class="label">Repeat Password</label>
+								<input id="pass" type="password" class="input" data-type="password" name="c_password" required>
+							</div>
+							<div class="group">
+								<label for="pass" class="label">Email Address</label>
+								<input id="pass" type="email" class="input" name="email_id" required>
+							</div>
+							<div class="group">
+								<button type="submit" class="button" >SignUp</button>
+							</div>
+							<div class="hr">
+							<div class="foot-lnk" style="color:black">
+								<label for="tab-1">Already Member?</a>
+							</div>
+						</div>
+						</form>
+						<!--registration form end-->
+					</div>
+				</div>
+			</div>
+			</section>
+	</body>
+	 <!-- JavaScript Libraries -->
+	 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	 <script src="{% static 'landing-assets/lib/easing/easing.min.js' %}"></script>
+	 <script src="{% static 'landing-assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+	 <script src="{% static 'landing-assets/lib/isotope/isotope.pkgd.min.js' %}"></script>
+
+	 <!-- Template Javascript -->
+	 <script src="{% static 'landing-assets/js/main.js' %}"></script>
+ </body>
+</html>
+
